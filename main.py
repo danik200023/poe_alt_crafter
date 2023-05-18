@@ -27,12 +27,9 @@ listener.start()
 
 pyautogui.keyDown('shift')
 
-# Останавливаем слушателя (например, после выполнения определенных действий)
-
-
-# listener.stop()
 while True:
     if pyclip.paste() != clipboard_content:
         clipboard_content = pyclip.paste()
         analyze_item_description()
     pyautogui.click()
+    pyautogui.hotkey("ctrl", "c")
